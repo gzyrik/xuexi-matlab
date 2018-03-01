@@ -1,0 +1,6 @@
+%PI     3.1415926535897....
+%   PI = 4*atan(1) = imag(log(-1)) = 3.1415926535897....
+
+%   Copyright 1984-2002 The MathWorks, Inc. 
+%   $Revision: 5.7 $  $Date: 2002/04/08 20:21:09 $
+%   Built-in function.

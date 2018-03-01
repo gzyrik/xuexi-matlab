@@ -1,0 +1,51 @@
+基本求导公式:
+Y = A' * X * B  -> A * B'
+Y = A' * X'* B  -> B * A'
+Y = A * X       -> A'
+Y = A * X'      -> A
+Y = X'* A       -> A
+Y = X * A       -> A'
+Y = X'*X        -> 2X
+--------------------------------------------------
+复合公式:
+d(f*g)/dX=(df'/dX)g+(dg/dX)f'
+--------------------------------------------------
+标量y对矩阵X求导公式:
+y = X'AX        -> AX+A'X
+y = XAX'        -> XA+XA'
+y = X'A'AX      -> 2A'AX
+y = A'X'XA      -> 2XAA'
+y = (X-B)'(X-B) -> 2(X-B)
+y = (XA-B)'(XA-B)-> 2(XA-B)A'
+y = (AX-B)'(AX-B)-> 2A'(AX-B)
+--------------------------------------------------
+推导过程:
+
+y=X'AX
+令 f=X',g=AX,则复合公式得
+d(X'(AX))/dX= (df'/dX)AX+(dg/dX)X
+            = (d(X'')/dX)AX+(d(AX)/dX)X
+            = AX+A'X
+Y=X'X
+令 f = X',g=X,则复合公式得
+d(X'X)/dX = (df'/dX)X+(dg/dX)X
+          = (d(X'')/dX)X+(dX/dX)X
+          = X + X = 2X
+
+
+y =(XA-B)'(XA-B) = (A'X'-B')(XA-B)
+                 = A'X'XA-A'X'B-B'XA-B'B, 因y为标量,A'X'B = (A'X'B)' = B'XA 
+                 = A'X'XA - 2B'XA + B'B
+由以上公式得
+dy/dX = d(A'X'XA - 2B'XA + B'B)
+      = 2XAA' - 2BA'
+      = 2(XA-B)A' 
+同理:
+y = (X-B)'(X-B) = X'X - 2B'X + B'B
+dy/dX = 2(X - B)
+
+y =(AX-B)'(AX-B)= (X'A'-B')(AX-B)
+                = X'A'AX-X'A'B-B'AX-B'B  因y为标量,X'A'B = (X'A'B)' = B'AX
+                = X'A'AX - 2B'AX + B'B
+由以上公式得
+dy/dX = 2A'AX - 2A'B = 2A'(AX-B)
