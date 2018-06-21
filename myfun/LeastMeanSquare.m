@@ -3,7 +3,7 @@ function [S,y,e]=LeastMeanSquare(S,x,d)
 % 调用方式:
 %   S = LeastMeanSquare; %创建滤波器迭代对象
 %   S.M=16;S.p=0.1;%设置参数
-%   [S,y,e] = LeastMeanSquare(S,x,d); %更新观测值,期望值,返回迭代对象,适应结果,误差.
+%   [S,y,e] = LeastMeanSquare(S,x,d); %更新观测值x,期望值d; 返回迭代对象S,适应结果y,误差e.
 %
 %   S.M是自适应滤波器的阶数.
 %   S.p是收敛因子(步长)

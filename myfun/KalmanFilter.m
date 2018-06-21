@@ -3,7 +3,7 @@ function [S,x] = KalmanFilter(S,z,u)
 % 动态系统中从不完全及包含噪声的测量中,根据统计特性迭代估计当前最佳状态.
 % 调用方式:
 %   S = KalmanFilter; %创建滤波器迭代对象
-%   [S,x] = KalmanFilter(S,randn); %更新观测值,返回迭代对象,估计结果.
+%   [S,x] = KalmanFilter(S,z,u); %更新观测值z,额外驱动u;返回迭代对象S,估计结果x.
 %
 % 动态系统必须符合如下条件:
 %   - 迭代关系
